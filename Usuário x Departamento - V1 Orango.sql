@@ -1,0 +1,1 @@
+SELECT      COALESCE(t.name, 'No Tenant') AS "Nome do Departamento",     COUNT(u.id) AS "Contagem de usuários" FROM      mdl_user AS u LEFT JOIN      mdl_tool_tenant_user AS tu ON tu.userid = u.id LEFT JOIN      mdl_tool_tenant AS t ON t.id = tu.tenantid WHERE      u.deleted = 0 GROUP BY      t.name ORDER BY      "Nome do Departamento" ASC;
