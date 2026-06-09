@@ -1,0 +1,1 @@
+SELECT     u.ID,     TIMESTAMPADD(HOUR, -3, u.user_registered) AS user_registered,     MAX(CASE WHEN um.meta_key = 'cpf' THEN um.meta_value END) AS cpf FROM     wp_users u LEFT JOIN     wp_usermeta um ON u.ID = um.user_id GROUP BY     u.ID,     u.user_registered HAVING     user_registered > '2026-01-14'     AND cpf = '0' ORDER BY     u.ID;
