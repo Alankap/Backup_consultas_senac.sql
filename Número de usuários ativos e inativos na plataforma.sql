@@ -1,0 +1,1 @@
+SELECT      COUNT(CASE                WHEN u.suspended = 1 OR u.deleted = 1 THEN u.id            END) AS status_usuario,     COUNT(CASE                WHEN u.suspended = 0 AND u.deleted = 0 THEN u.id            END) AS total_usuarios FROM      mdl_user u WHERE      u.id > 2;
