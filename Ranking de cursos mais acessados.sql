@@ -1,0 +1,1 @@
+SELECT     c.id AS "ID Curso",     c.fullname AS "Nome Curso",     COUNT(l.id) AS total_acessos FROM mdl_logstore_standard_log l INNER JOIN mdl_course c ON c.id = l.courseid WHERE l.action = 'viewed'   AND c.fullname NOT LIKE '%Senac%' GROUP BY c.id, c.fullname ORDER BY total_acessos DESC;
