@@ -1,0 +1,1 @@
+SELECT      u.id AS "Id do usuário",     u.firstname AS "Nome",     u.lastname AS "Sobrenome",     t.id AS "Id do Departamento",     t.name AS "Nome do Departamento" FROM      mdl_user AS u LEFT JOIN      mdl_tool_tenant_user AS tu ON tu.userid = u.id LEFT JOIN      mdl_tool_tenant AS t ON t.id = tu.tenantid WHERE      u.deleted = 0;
